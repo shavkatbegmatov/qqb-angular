@@ -10,22 +10,49 @@
       "id": 1
     },
     {
-      "productName": "Mango",
+      "productName": "Mango2",
       "category": "Fruits",
       "freshness": "Second Hand",
       "price": 250,
       "comment": "This is not fresh",
-      "date": "2022-04-13T19:00:00.000Z",
+      "date": "2022-04-12T19:00:00.000Z",
       "id": 2
     },
     {
-      "productName": "Apple",
+      "productName": "Apple2333",
       "category": "Electronic",
       "freshness": "Refurbished",
       "price": 400,
       "comment": "www",
-      "date": "2022-04-29T19:00:00.000Z",
+      "date": "2022-04-04T19:00:00.000Z",
       "id": 3
+    },
+    {
+      "productName": "JAvohir tovoq",
+      "category": "Electronic",
+      "freshness": "Refurbished",
+      "price": 1200,
+      "comment": "Bu tovoqcha",
+      "date": "2022-04-02T19:00:00.000Z",
+      "id": 4
+    },
+    {
+      "productName": "Olma",
+      "category": "Vegetables",
+      "freshness": "Second Hand",
+      "price": 300,
+      "comment": "dfghdfghj",
+      "date": "2022-04-11T19:00:00.000Z",
+      "id": 5
+    },
+    {
+      "productName": "kighjgf",
+      "category": "Fruits",
+      "freshness": "Second Hand",
+      "price": 600,
+      "comment": "ggasdfgh",
+      "date": "2022-04-11T19:00:00.000Z",
+      "id": 6
     }
   ],
   "comments": [
