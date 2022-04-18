@@ -1,16 +1,16 @@
 {
   "productList": [
     {
-      "productName": "Apple",
+      "productName": "Олма",
       "category": "Fruits",
-      "freshness": "Brand New",
-      "price": 100,
-      "comment": "This is fresh apple",
-      "date": "2022-04-14T19:00:00.000Z",
+      "freshness": "Second Hand",
+      "price": 5,
+      "comment": "Ширин олма егинг келса ҳозироқ сотиб ол!",
+      "date": "2022-04-16T19:00:00.000Z",
       "id": 1
     },
     {
-      "productName": "Mango2",
+      "productName": "Mango27",
       "category": "Fruits",
       "freshness": "Second Hand",
       "price": 250,
@@ -19,16 +19,7 @@
       "id": 2
     },
     {
-      "productName": "Apple2333",
-      "category": "Electronic",
-      "freshness": "Refurbished",
-      "price": 400,
-      "comment": "www",
-      "date": "2022-04-04T19:00:00.000Z",
-      "id": 3
-    },
-    {
-      "productName": "JAvohir tovoq",
+      "productName": "Javohir tovoq",
       "category": "Electronic",
       "freshness": "Refurbished",
       "price": 1200,
@@ -46,13 +37,58 @@
       "id": 5
     },
     {
-      "productName": "kighjgf",
+      "productName": "Hasanjon",
       "category": "Fruits",
       "freshness": "Second Hand",
-      "price": 600,
-      "comment": "ggasdfgh",
-      "date": "2022-04-11T19:00:00.000Z",
+      "price": 1300,
+      "comment": "Hasanjon misoillarni yechdingmi?",
+      "date": "2013-10-14T19:00:00.000Z",
       "id": 6
+    },
+    {
+      "productName": "Shaxruz",
+      "category": "Vegetables",
+      "freshness": "Second Hand",
+      "price": 1200,
+      "comment": "Shamolday yengil!",
+      "date": "2013-08-02T19:00:00.000Z",
+      "id": 7
+    },
+    {
+      "productName": "Нок2",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": 3,
+      "comment": "Ширин нок",
+      "date": "2022-04-15T19:00:00.000Z",
+      "id": 8
+    },
+    {
+      "productName": "Carrot",
+      "category": "Vegetables",
+      "freshness": "Brand New",
+      "price": 5,
+      "comment": "It's tasty and fresh!",
+      "date": "2022-04-15T19:00:00.000Z",
+      "id": 9
+    },
+    {
+      "branch": "Chilonzor",
+      "category": "Vegetables",
+      "freshness": "Brand New",
+      "price": 12,
+      "comment": "bank",
+      "date": "2022-04-14T19:00:00.000Z",
+      "id": 10
+    },
+    {
+      "branch": "B-02",
+      "typeLoan": "L-04",
+      "freshness": "Second Hand",
+      "price": 34,
+      "comment": "апывапывапывап",
+      "date": "2022-04-07T19:00:00.000Z",
+      "id": 11
     }
   ],
   "comments": [

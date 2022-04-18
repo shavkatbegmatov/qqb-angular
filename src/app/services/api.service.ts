@@ -14,6 +14,7 @@ export class ApiService {
   }
   getProduct() {
     return this.http.get<any>("http://localhost:3000/productList/");
+    //return this.http.get<any>("http://localhost:8000/index.php/user/list?limit=20");
   }
   putProduct(data: any, id: number) {
     return this.http.put<any>("http://localhost:3000/productList/" + id, data);
