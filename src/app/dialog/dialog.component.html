@@ -68,26 +68,39 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label>Choose a date</mat-label>
-      <input formControlName="date" matInput [matDatepicker]="picker" />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <label for=""><h1>Product Freshness</h1></label>
-    <mat-radio-group formControlName="freshness" class="example-radio-group">
-      <mat-radio-button 
-        *ngFor="let fresh of freshnessList" [value]="fresh"
-        class="example-radio-button">
-        {{fresh}}
-      </mat-radio-button>
-    </mat-radio-group>
-    <mat-form-field appearance="outline">
-      <mat-label>Price</mat-label>
-      <input formControlName="price" matInput type="number" placeholder="Price" />
+      <mat-label>Валюта</mat-label>
+      <mat-select formControlName="currency" placeholder="Валюта">
+        <mat-option value="C-01">Сум</mat-option>
+        <mat-option value="C-02">Доллар США</mat-option>
+      </mat-select>
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label>Comment</mat-label>
-      <textarea formControlName="comment" matInput></textarea>
+      <mat-label>Дата начала</mat-label>
+      <input formControlName="startDate" matInput [matDatepicker]="picker1" />
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Дата окончания</mat-label>
+      <input formControlName="expirationDate" matInput [matDatepicker]="picker2" />
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Сумма по договору</mat-label>
+      <input formControlName="amount" matInput type="number" placeholder="Сумма по договору" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+    	<mat-label>Задолженности</mat-label>
+    	<input formControlName="arrears" matInput type="number" placeholder="Задолженности" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+    	<mat-label>Процент</mat-label>
+    	<input formControlName="percent" matInput type="number" placeholder="Процент" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+    	<mat-label>Остаток</mat-label>
+    	<input formControlName="balance" matInput type="number" placeholder="Остаток" />
     </mat-form-field>
   </form>
 </div>

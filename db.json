@@ -1,104 +1,52 @@
 {
   "productList": [
     {
-      "productName": "Олма",
-      "category": "Fruits",
-      "freshness": "Second Hand",
-      "price": 5,
-      "comment": "Ширин олма егинг келса ҳозироқ сотиб ол!",
-      "date": "2022-04-16T19:00:00.000Z",
-      "id": 1
+      "branch": "B-34",
+      "typeLoan": "L-09",
+      "currency": "C-01",
+      "startDate": "2022-04-02T19:00:00.000Z",
+      "expirationDate": "2022-04-28T19:00:00.000Z",
+      "amount": 450000000,
+      "arrears": 15000,
+      "percent": 29,
+      "balance": 347000000,
+      "id": 16
     },
     {
-      "productName": "Mango27",
-      "category": "Fruits",
-      "freshness": "Second Hand",
-      "price": 250,
-      "comment": "This is not fresh",
-      "date": "2022-04-12T19:00:00.000Z",
-      "id": 2
-    },
-    {
-      "productName": "Javohir tovoq",
-      "category": "Electronic",
-      "freshness": "Refurbished",
-      "price": 1200,
-      "comment": "Bu tovoqcha",
-      "date": "2022-04-02T19:00:00.000Z",
-      "id": 4
-    },
-    {
-      "productName": "Olma",
-      "category": "Vegetables",
-      "freshness": "Second Hand",
-      "price": 300,
-      "comment": "dfghdfghj",
-      "date": "2022-04-11T19:00:00.000Z",
-      "id": 5
-    },
-    {
-      "productName": "Hasanjon",
-      "category": "Fruits",
-      "freshness": "Second Hand",
-      "price": 1300,
-      "comment": "Hasanjon misoillarni yechdingmi?",
-      "date": "2013-10-14T19:00:00.000Z",
-      "id": 6
-    },
-    {
-      "productName": "Shaxruz",
-      "category": "Vegetables",
-      "freshness": "Second Hand",
-      "price": 1200,
-      "comment": "Shamolday yengil!",
-      "date": "2013-08-02T19:00:00.000Z",
-      "id": 7
-    },
-    {
-      "productName": "Нок2",
-      "category": "Fruits",
-      "freshness": "Brand New",
-      "price": 3,
-      "comment": "Ширин нок",
-      "date": "2022-04-15T19:00:00.000Z",
-      "id": 8
-    },
-    {
-      "productName": "Carrot",
-      "category": "Vegetables",
-      "freshness": "Brand New",
-      "price": 5,
-      "comment": "It's tasty and fresh!",
-      "date": "2022-04-15T19:00:00.000Z",
-      "id": 9
-    },
-    {
-      "branch": "Chilonzor",
-      "category": "Vegetables",
-      "freshness": "Brand New",
-      "price": 12,
-      "comment": "bank",
-      "date": "2022-04-14T19:00:00.000Z",
-      "id": 10
-    },
-    {
-      "branch": "B-02",
+      "branch": "B-06",
       "typeLoan": "L-04",
-      "freshness": "Second Hand",
-      "price": 34,
-      "comment": "апывапывапывап",
-      "date": "2022-04-07T19:00:00.000Z",
-      "id": 11
-    }
-  ],
-  "comments": [
+      "currency": "C-01",
+      "startDate": "2016-07-13T19:00:00.000Z",
+      "expirationDate": "2028-07-13T19:00:00.000Z",
+      "amount": 685000000,
+      "arrears": 105000,
+      "percent": 18,
+      "balance": 360000000,
+      "id": 17
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "branch": "B-03",
+      "typeLoan": "L-04",
+      "currency": "C-01",
+      "startDate": "2025-03-31T19:00:00.000Z",
+      "expirationDate": "2039-03-09T19:00:00.000Z",
+      "amount": 540000000,
+      "arrears": 15000,
+      "percent": 19,
+      "balance": 490000000,
+      "id": 18
+    },
+    {
+      "branch": "B-37",
+      "typeLoan": "L-11",
+      "currency": "C-01",
+      "startDate": "2022-04-04T19:00:00.000Z",
+      "expirationDate": "2022-04-27T19:00:00.000Z",
+      "amount": 23451235,
+      "arrears": 452345,
+      "percent": 2345,
+      "balance": 2345,
+      "id": 19
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

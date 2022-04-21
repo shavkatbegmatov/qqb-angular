@@ -32,6 +32,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { PageDepositsComponent } from './page-deposits/page-deposits.component';
 import { PageLoansComponent } from './page-loans/page-loans.component';
 import { PageSmartvisaComponent } from './page-smartvisa/page-smartvisa.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { PageInteractiveComponent } from './page-interactive/page-interactive.component';
+import { PageHumoComponent } from './page-humo/page-humo.component';
+import { PageVisaComponent } from './page-visa/page-visa.component';
+import { PageDepositcardComponent } from './page-depositcard/page-depositcard.component';
+import { PageSettlementSheetComponent } from './page-settlement-sheet/page-settlement-sheet.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -41,7 +48,12 @@ import { PageSmartvisaComponent } from './page-smartvisa/page-smartvisa.componen
     HomeComponent,
     PageDepositsComponent,
     PageLoansComponent,
-    PageSmartvisaComponent
+    PageSmartvisaComponent,
+    PageInteractiveComponent,
+    PageHumoComponent,
+    PageVisaComponent,
+    PageDepositcardComponent,
+    PageSettlementSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -68,9 +80,11 @@ import { PageSmartvisaComponent } from './page-smartvisa/page-smartvisa.componen
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    AngularSvgIconModule.forRoot() 
   ],
-  providers: [],
+  // providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -18,10 +18,16 @@ export class PageLoansComponent {
 
   // branch - Филиал
   // typeLoan - Вид кредита
-  // branch - Филиал
-  // branch - Филиал
-  // branch - Филиал
-  displayedColumns: string[] = ['branch', 'typeLoan', 'date', 'freshness', 'price', 'comment', 'action'];
+  // currency - Валюта
+  // startDate - Дата начала
+  // expirationDate - Дата окончания
+  // amount - Сумма по договору
+  // arrears - Задолженности
+  // percent - Процент
+  // balance - Остаток
+
+
+  displayedColumns: string[] = ['branch', 'typeLoan', 'currency', 'startDate', 'expirationDate', 'amount', 'arrears', 'percent', 'balance', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -68,6 +74,7 @@ export class PageLoansComponent {
     this.api.getProduct()
     .subscribe({
       next: (res) => {
+        console.log(res[0]['branch']);
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
@@ -97,7 +104,7 @@ export class PageLoansComponent {
       }
     })
   }
-    editProduct(row: any) {
+  editProduct(row: any) {
     this.dialog.open(DialogComponent, {
       width: '30%',
       data: row
