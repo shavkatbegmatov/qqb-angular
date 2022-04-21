@@ -1,0 +1,47 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background-color: rgb(174, 172, 214);
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.myimg{
+  position: absolute;
+
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.mytitle {
+  font-size: 1rem;
+}
+
+.dashboard-card:hover {
+  background-color: aquamarine;
+  // cursor: pointer;
+}
+
+.mytitle a {
+  text-decoration: none;
+}
+
+.mytitle a:hover {
+  text-decoration: underline;
+}

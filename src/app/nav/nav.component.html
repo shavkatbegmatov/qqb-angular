@@ -1,0 +1,59 @@
+<mat-sidenav-container class="sidenav-container">
+	<mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+		[mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+		<mat-toolbar>Меню</mat-toolbar>
+		<mat-nav-list>
+			<a mat-list-item routerLink="/home">
+				<img height="36px" alt="Logo" src="./assets/images/bank-1.png">
+				<span style="padding-left: 7px;">Главная стр-ца</span>
+			</a>
+			<a mat-list-item routerLink="/page-deposits">
+				<img height="36px" alt="Logo" src="./assets/images/deposit.png">
+				<span style="padding-left: 7px;">Депозиты</span>
+			</a>
+			<a mat-list-item routerLink="/page-loans">
+				<img height="36px" alt="Logo" src="./assets/images/payment.gif">
+				<span style="padding-left: 7px;">Кредиты</span>
+			</a>
+			<a mat-list-item routerLink="/page-smartvisa">
+				<img height="36px" alt="Logo" src="./assets/images/smartvisa.png">
+				<span style="padding-left: 7px;">Smart Visa</span>
+			</a>
+			<a mat-list-item href="/page-humo">
+				<img height="23px" alt="Logo" src="./assets/images/humo.png">
+				<span style="padding-left: 7px;">HUMO</span>
+			</a>
+			<a mat-list-item href="/page-visa">
+				<img height="36px" alt="Logo" src="./assets/images/visa.png">
+				<span style="padding-left: 7px;">VISA</span>
+			</a>
+			<a mat-list-item href="/page-depositcard">
+				<img height="36px" alt="Logo" src="./assets/images/deposit-card.png">
+				<span style="padding-left: 7px;">DepositCard</span>
+			</a>
+			<a mat-list-item href="/page-settlement-sheet">
+				<img height="36px" alt="Logo" src="./assets/images/bank-check.png">
+				<span style="padding-left: 7px;">Расчетный лист</span>
+			</a>
+			<a mat-list-item href="/page-interactive">
+				<img height="36px" alt="Logo" src="./assets/images/interactive.png">
+				<span style="padding-left: 7px;">Услуги</span>
+			</a>
+			<a mat-list-item href="#">
+				<img height="36px" alt="Logo" src="./assets/images/logout.png">
+				<!-- <mat-icon>exit_to_app</mat-icon> -->
+				<span style="padding-left: 7px;">Выход</span>
+			</a>
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<mat-toolbar color="primary">
+			<button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+				*ngIf="isHandset$ | async">
+				<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+			</button>
+			<img alt="Logo" src="./assets/images/logo-white.png">
+		</mat-toolbar>
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>

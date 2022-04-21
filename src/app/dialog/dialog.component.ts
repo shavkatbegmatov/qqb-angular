@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
-import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog',
@@ -13,6 +13,7 @@ export class DialogComponent implements OnInit {
   freshnessList = ["Brand New", "Second Hand", "Refurbished"];
   productForm!: FormGroup;
   actionBtn: string = "Save";
+  
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
@@ -21,22 +22,28 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
-      productName: ['', Validators.required],
-      category: ['', Validators.required],
-      freshness: ['', Validators.required],
-      price: ['', Validators.required],
-      comment: ['', Validators.required],
-      date: ['', Validators.required]
+      branch: ['', Validators.required],
+      typeLoan: ['', Validators.required],
+      currency: ['', Validators.required],
+      startDate: ['', Validators.required],
+      expirationDate: ['', Validators.required],
+      amount: ['', Validators.required],
+      arrears: ['', Validators.required],
+      percent: ['', Validators.required],
+      balance: ['', Validators.required],
     });
 
     if(this.editData) {
       this.actionBtn = "Update";
-      this.productForm.controls['productName'].setValue(this.editData.productName);
-      this.productForm.controls['category'].setValue(this.editData.category);
-      this.productForm.controls['freshness'].setValue(this.editData.freshness);
-      this.productForm.controls['price'].setValue(this.editData.price);
-      this.productForm.controls['comment'].setValue(this.editData.comment);
-      this.productForm.controls['date'].setValue(this.editData.date);
+      this.productForm.controls['branch'].setValue(this.editData.branch);
+      this.productForm.controls['typeLoan'].setValue(this.editData.typeLoan);
+      this.productForm.controls['currency'].setValue(this.editData.currency);
+      this.productForm.controls['startDate'].setValue(this.editData.startDate);
+      this.productForm.controls['expirationDate'].setValue(this.editData.expirationDate);
+      this.productForm.controls['amount'].setValue(this.editData.amount);
+      this.productForm.controls['arrears'].setValue(this.editData.arrears);
+      this.productForm.controls['percent'].setValue(this.editData.percent);
+      this.productForm.controls['balance'].setValue(this.editData.balance);
     }
   }
 
@@ -46,7 +53,7 @@ export class DialogComponent implements OnInit {
         this.api.postProduct(this.productForm.value)
         .subscribe({
           next: (res) => {
-            // alert("Product added successfully");
+            alert("Product added successfully");
             this.productForm.reset();
             this.dialogRef.close('save');
           },

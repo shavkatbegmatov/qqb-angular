@@ -1,39 +1,106 @@
-<h1 mat-dialog-title>Add Product Form</h1>
+<h1 mat-dialog-title>Добавить новый кредит</h1>
 <div mat-dialog-content>
   <form [formGroup]="productForm">
     <mat-form-field appearance="outline">
-      <mat-label>Product Name</mat-label>
-      <input formControlName="productName" matInput placeholder="Name" />
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Product Category</mat-label>
-      <mat-select formControlName="category" placeholder="Category">
-        <mat-option value="Fruits">Fruits</mat-option>
-        <mat-option value="Vegetables">Vegetables</mat-option>
-        <mat-option value="Electronic">Electronic</mat-option>
+      <mat-label>Филиал</mat-label>
+      <mat-select formControlName="branch" placeholder="Выберите филиал">
+        <mat-option value="B-01">Каракалпакский региональный филиал</mat-option>
+        <mat-option value="B-02">Берунийский филиал</mat-option>
+        <mat-option value="B-03">Кунгиратский филиал</mat-option>
+        <mat-option value="B-04">Чимбойский филиал</mat-option>
+        <mat-option value="B-05">Андижанский региональный филиал</mat-option>
+        <mat-option value="B-06">Кургантепинский филиал</mat-option>
+        <mat-option value="B-07">Ходжаабадский филиал</mat-option>
+        <mat-option value="B-08">Бухарский региональный филиал</mat-option>
+        <mat-option value="B-09">Когонский филиал</mat-option>
+        <mat-option value="B-10">Джизакский региональный филиал</mat-option>
+        <mat-option value="B-11">Янгиабадский филиал</mat-option>
+        <mat-option value="B-12">Кашкадарьинский региональный филиал</mat-option>
+        <mat-option value="B-13">Кукдалинский филиал</mat-option>
+        <mat-option value="B-14">Яккабагский филиал</mat-option>
+        <mat-option value="B-15">Навоийский региональный филиал</mat-option>
+        <mat-option value="B-16">Наманганский областной филиал</mat-option>
+        <mat-option value="B-17">Папский филиал</mat-option>
+        <mat-option value="B-18">Учкурганский филиал</mat-option>
+        <mat-option value="B-19">Самаркандский региональный филиал</mat-option>
+        <mat-option value="B-20">Каттакурганский филиал</mat-option>
+        <mat-option value="B-21">Сурхондарьинский региональный филиал</mat-option>
+        <mat-option value="B-22">Кумкурганский филиал</mat-option>
+        <mat-option value="B-23">Шурчинский филиал</mat-option>
+        <mat-option value="B-24">Джаркурганский филиал</mat-option>
+        <mat-option value="B-25">Сариасинский филиал</mat-option>
+        <mat-option value="B-26">Сырдарьинский региональный филиал</mat-option>
+        <mat-option value="B-27">Ташкентский городской региональный филиал</mat-option>
+        <mat-option value="B-28">Ташкентский областной региональный филиал</mat-option>
+        <mat-option value="B-29">Ферганский региональный филиал</mat-option>
+        <mat-option value="B-30">Хорезмский региональный филиал</mat-option>
+        <mat-option value="B-31">Янгиерский филиал</mat-option>
+        <mat-option value="B-32">Кокандский филиал</mat-option>
+        <mat-option value="B-33">Кувинский филиал</mat-option>
+        <mat-option value="B-34">Маргиланский филиал</mat-option>
+        <mat-option value="B-35">Ханкинский филиал</mat-option>
+        <mat-option value="B-36">Хивинский филиал</mat-option>
+        <mat-option value="B-37">Ахангаранский филиал</mat-option>
+        <mat-option value="B-38">Бекобадский филиал</mat-option>
+        <mat-option value="B-39">Янгиюльский филиал</mat-option>
+        <mat-option value="B-40">Газалкентский филиал</mat-option>
+        <mat-option value="B-41">Сергелийский филиал</mat-option>
+        <mat-option value="B-42">Главное операционное управление</mat-option>
+        <mat-option value="B-43">Галаасинский филиал</mat-option>
+        <mat-option value="B-44">Яккасарайский филиал</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label>Choose a date</mat-label>
-      <input formControlName="date" matInput [matDatepicker]="picker" />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <mat-label>Вид кредита</mat-label>
+      <mat-select formControlName="typeLoan" placeholder="Вид кредита">
+        <mat-option value="L-01">Кредитный конвейр</mat-option>
+        <mat-option value="L-02">Кредит Overdraft</mat-option>
+        <mat-option value="L-03">Автокредит</mat-option>
+        <mat-option value="L-04">Ипотечные кредиты</mat-option>
+        <mat-option value="L-05">Микрозайм</mat-option>
+        <mat-option value="L-06">Ипотечный кредит на жилье в сельской местности</mat-option>
+        <mat-option value="L-07">Ипотечные кредиты по новому порядку</mat-option>
+        <mat-option value="L-08">Ипотечный кредит на строительство и реконструкцию индивидуального жилья</mat-option>
+        <mat-option value="L-09">Потребительский кредит «Зеленый»</mat-option>
+        <mat-option value="L-10">Онлайн-кредит</mat-option>
+        <mat-option value="L-11">Потребительский кредит</mat-option>
+        <mat-option value="L-12">Кредит на образование</mat-option>
+      </mat-select>
     </mat-form-field>
-    <label for=""><h1>Product Freshness</h1></label>
-    <mat-radio-group formControlName="freshness" class="example-radio-group">
-      <mat-radio-button 
-        *ngFor="let fresh of freshnessList" [value]="fresh"
-        class="example-radio-button">
-        {{fresh}}
-      </mat-radio-button>
-    </mat-radio-group>
     <mat-form-field appearance="outline">
-      <mat-label>Price</mat-label>
-      <input formControlName="price" matInput type="number" placeholder="Price" />
+      <mat-label>Валюта</mat-label>
+      <mat-select formControlName="currency" placeholder="Валюта">
+        <mat-option value="C-01">Сум</mat-option>
+        <mat-option value="C-02">Доллар США</mat-option>
+      </mat-select>
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label>Comment</mat-label>
-      <textarea formControlName="comment" matInput></textarea>
+      <mat-label>Дата начала</mat-label>
+      <input formControlName="startDate" matInput [matDatepicker]="picker1" />
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Дата окончания</mat-label>
+      <input formControlName="expirationDate" matInput [matDatepicker]="picker2" />
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Сумма по договору</mat-label>
+      <input formControlName="amount" matInput type="number" placeholder="Сумма по договору" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+    	<mat-label>Задолженности</mat-label>
+    	<input formControlName="arrears" matInput type="number" placeholder="Задолженности" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+    	<mat-label>Процент</mat-label>
+    	<input formControlName="percent" matInput type="number" placeholder="Процент" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+    	<mat-label>Остаток</mat-label>
+    	<input formControlName="balance" matInput type="number" placeholder="Остаток" />
     </mat-form-field>
   </form>
 </div>

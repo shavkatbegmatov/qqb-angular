@@ -1,68 +1,52 @@
 {
   "productList": [
     {
-      "productName": "Apple",
-      "category": "Fruits",
-      "freshness": "Brand New",
-      "price": 100,
-      "comment": "This is fresh apple",
-      "date": "2022-04-14T19:00:00.000Z",
-      "id": 1
+      "branch": "B-34",
+      "typeLoan": "L-09",
+      "currency": "C-01",
+      "startDate": "2022-04-02T19:00:00.000Z",
+      "expirationDate": "2022-04-28T19:00:00.000Z",
+      "amount": 450000000,
+      "arrears": 15000,
+      "percent": 29,
+      "balance": 347000000,
+      "id": 16
     },
     {
-      "productName": "Mango2",
-      "category": "Fruits",
-      "freshness": "Second Hand",
-      "price": 250,
-      "comment": "This is not fresh",
-      "date": "2022-04-12T19:00:00.000Z",
-      "id": 2
+      "branch": "B-06",
+      "typeLoan": "L-04",
+      "currency": "C-01",
+      "startDate": "2016-07-13T19:00:00.000Z",
+      "expirationDate": "2028-07-13T19:00:00.000Z",
+      "amount": 685000000,
+      "arrears": 105000,
+      "percent": 18,
+      "balance": 360000000,
+      "id": 17
     },
     {
-      "productName": "Apple2333",
-      "category": "Electronic",
-      "freshness": "Refurbished",
-      "price": 400,
-      "comment": "www",
-      "date": "2022-04-04T19:00:00.000Z",
-      "id": 3
+      "branch": "B-03",
+      "typeLoan": "L-04",
+      "currency": "C-01",
+      "startDate": "2025-03-31T19:00:00.000Z",
+      "expirationDate": "2039-03-09T19:00:00.000Z",
+      "amount": 540000000,
+      "arrears": 15000,
+      "percent": 19,
+      "balance": 490000000,
+      "id": 18
     },
     {
-      "productName": "JAvohir tovoq",
-      "category": "Electronic",
-      "freshness": "Refurbished",
-      "price": 1200,
-      "comment": "Bu tovoqcha",
-      "date": "2022-04-02T19:00:00.000Z",
-      "id": 4
-    },
-    {
-      "productName": "Olma",
-      "category": "Vegetables",
-      "freshness": "Second Hand",
-      "price": 300,
-      "comment": "dfghdfghj",
-      "date": "2022-04-11T19:00:00.000Z",
-      "id": 5
-    },
-    {
-      "productName": "kighjgf",
-      "category": "Fruits",
-      "freshness": "Second Hand",
-      "price": 600,
-      "comment": "ggasdfgh",
-      "date": "2022-04-11T19:00:00.000Z",
-      "id": 6
+      "branch": "B-37",
+      "typeLoan": "L-11",
+      "currency": "C-01",
+      "startDate": "2022-04-04T19:00:00.000Z",
+      "expirationDate": "2022-04-27T19:00:00.000Z",
+      "amount": 23451235,
+      "arrears": 452345,
+      "percent": 2345,
+      "balance": 2345,
+      "id": 19
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
