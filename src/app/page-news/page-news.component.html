@@ -1,27 +1,22 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Интерактивные услуги</h1>
-  <mat-grid-list cols="3" rowHeight="200px">
+  <h1 class="mat-h1">Новости</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
-          <mat-card-title class="mytitle">
-            <a href="{{card.href1}}">{{card.title}} </a>
+          <mat-card-title>
+            {{card.title}}
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Расширять</button>
-              <button mat-menu-item>Удалить</button>
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>
-            <img class="myimg" height="48px" alt="Logo" src="./assets/images/{{card.icon}}">
-          </div>
-          <a mat-button href="{{card.href2}}" color="primary" class="btn-detail" style="margin-left: 8px;"
-          	mat-raised-button
-          	color="primary">Подробно</a>
+          <div>Card Content Here</div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

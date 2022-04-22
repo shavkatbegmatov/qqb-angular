@@ -39,6 +39,8 @@ import { PageVisaComponent } from './page-visa/page-visa.component';
 import { PageDepositcardComponent } from './page-depositcard/page-depositcard.component';
 import { PageSettlementSheetComponent } from './page-settlement-sheet/page-settlement-sheet.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { PageNewsComponent } from './page-news/page-news.component';
+import { PageCoinlayerComponent } from './page-coinlayer/page-coinlayer.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     PageHumoComponent,
     PageVisaComponent,
     PageDepositcardComponent,
-    PageSettlementSheetComponent
+    PageSettlementSheetComponent,
+    PageNewsComponent,
+    PageCoinlayerComponent
   ],
   imports: [
     BrowserModule,

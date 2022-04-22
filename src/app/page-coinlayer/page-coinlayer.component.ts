@@ -8,13 +8,14 @@ import { ApiService } from '../services/api.service';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+// import * as moment from 'moment';
 
 @Component({
-  selector: 'app-page-loans',
-  templateUrl: './page-loans.component.html',
-  styleUrls: ['./page-loans.component.scss']
+  selector: 'app-page-coinlayer',
+  templateUrl: './page-coinlayer.component.html',
+  styleUrls: ['./page-coinlayer.component.scss']
 })
-export class PageLoansComponent {
+export class PageCoinlayerComponent {
 
   // branch - Филиал
   // typeLoan - Вид кредита
@@ -26,7 +27,7 @@ export class PageLoansComponent {
   // percent - Процент
   // balance - Остаток
 
-  displayedColumns: string[] = ['branch', 'typeLoan', 'currency', 'startDate', 'expirationDate', 'amount', 'arrears', 'percent', 'balance', 'action'];
+  displayedColumns: string[] = ['title', 'code', 'cb_price', 'nbu_buy_price', 'nbu_cell_price', 'date'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -53,27 +54,32 @@ export class PageLoansComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver, private dialog : MatDialog, private api : ApiService) {}
-
-  ngOnInit(): void {
-    this.getAllProducts();
+  constructor(private breakpointObserver: BreakpointObserver, private dialog : MatDialog, private api : ApiService) {
+    // this.test();
   }
 
-  openDialog() {
+  ngOnInit(): void {
+    this.getAllExchange();
+  }
+
+    openDialog() {
     this.dialog.open(DialogComponent, {
       width: '30%',
       minWidth: '350px',
     }).afterClosed().subscribe(val => {
       if(val === 'save') {
-        this.getAllProducts();
+        this.getAllExchange();
       }
     })
   }
-  getAllProducts() {
-    this.api.getProduct()
+  getAllExchange() {
+    this.api.getExchange()
     .subscribe({
       next: (res) => {
-        console.log(res[0]['branch']);
+        // console.log(moment(res[0]['date']).format());
+        // console.log(moment().format());
+        // res['date'] = moment().format();
+        // console.log(res);
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
@@ -91,26 +97,9 @@ export class PageLoansComponent {
       this.dataSource.paginator.firstPage();
     }
   }
-  deleteProduct(id: number) {
-    this.api.deleteProduct(id)
-    .subscribe({
-      next: (res) => {
-        alert("Product deleted successfully");
-        this.getAllProducts();
-      },
-      error: () => {
-        alert("Error while deleting the product!");
-      }
-    })
-  }
-  editProduct(row: any) {
-    this.dialog.open(DialogComponent, {
-      width: '30%',
-      data: row
-    }).afterClosed().subscribe(val => {
-      if(val === 'update') {
-        this.getAllProducts();
-      }
-    })
-  }
+  // test() {
+  //   const date = moment();
+  //   let todayDate = date.format('M/D/YYYY');
+  //   console.log(todayDate);
+  // }
 }
