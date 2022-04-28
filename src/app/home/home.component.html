@@ -1,24 +1,57 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Главная страница</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+	<article class="leaderboard">
+		<header>
+			<h1 class="leaderboard__title">
+				<span class="leaderboard__title--top">Главная страница</span>
+				<span class="leaderboard__title--bottom">Персональный кабинет</span>
+			</h1>
+		</header>
+	</article>
+	<mat-grid-list cols="2" rowHeight="550px">
+		<mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+			<mat-card class="dashboard-card">
+				<mat-card-header>
+					<mat-card-title>
+						{{card.title}}
+						<button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+							<mat-icon>more_vert</mat-icon>
+						</button>
+						<mat-menu #menu="matMenu" xPosition="before">
+							<button mat-menu-item>Expand</button>
+							<button mat-menu-item>Remove</button>
+						</mat-menu>
+					</mat-card-title>
+				</mat-card-header>
+				<mat-card-content class="dashboard-card-content">
+					<div class="card-container">
+						<div class="profile-container">
+							<img height="180px" alt="Logo" src="./assets/images/feruz.jpg">
+							<main class="leaderboard__profiles">
+								<article class="leaderboard__profile">
+									<span class="leaderboard__name">ФИО:</span>
+									<span class="leaderboard__value">Almuratov Firuz Fatilloyevich<span></span></span>
+								</article>
+								<article class="leaderboard__profile">
+									<span class="leaderboard__name">Адрес:</span>
+									<span class="leaderboard__value">Бухарская обл., Шафирканский р-н., Окрабод, Уч.
+										36.<span></span></span>
+								</article>
+								<article class="leaderboard__profile">
+									<span class="leaderboard__name">Серейный номер паспорта:</span>
+									<span class="leaderboard__value">AB2061240<span></span></span>
+								</article>
+							</main>
+						</div>
+						<div class="cabinet-info">
+							<p>Для чего мне нужен Персональный кабинет?</p>
+							<p>С помощью Персонального кабинета вы сможете:</p>
+							<p>1. Следить за остатком, начисленным процентам и выплаченным процентам по депозиту;</p>
+							<p>2. Подробная информация по Вашим кредитам;</p>
+							<p>3. Просматривать движения счетов Ваших пластиковых карт.</p>
+						</div>
+					</div>
+				</mat-card-content>
+			</mat-card>
+		</mat-grid-tile>
+	</mat-grid-list>
 </div>

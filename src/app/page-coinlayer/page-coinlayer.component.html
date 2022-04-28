@@ -20,7 +20,10 @@
 					<!-- Филиал (Branch) Column -->
 					<ng-container matColumnDef="title">
 						<th mat-header-cell *matHeaderCellDef mat-sort-header> Валюта </th>
-						<td mat-cell *matCellDef="let row"> {{row.title}} </td>
+						<td mat-cell *matCellDef="let row">
+							<!-- <img alt="Logo" src="./assets/images/Flag_of_Oman.svg.webp" />&nbsp;&nbsp; -->
+							{{row.title}}
+						</td>
 					</ng-container>
 
 					<!-- Вид кредита (Type of Loan) Column -->

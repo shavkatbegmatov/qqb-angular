@@ -53,6 +53,8 @@ table {
 
 .tab-overflow {
   overflow-x: auto;
+  height: 100vh;
+  max-width: 100%;
 }
 
 .mytable th{

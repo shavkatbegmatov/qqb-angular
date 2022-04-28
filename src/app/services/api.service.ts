@@ -15,6 +15,8 @@ export class ApiService {
   }
   getProduct() {
     // return this.http.get<any>("http://localhost:3000/productList/");
+    // let f: string[];
+    // f = this.http.get<any>("https://qqb-api.ruxshanateks.com/read.php");
     return this.http.get<any>("https://qqb-api.ruxshanateks.com/read.php");
   }
   putProduct(data: any, id: number) {
