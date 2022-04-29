@@ -49,26 +49,32 @@
 
 					<!-- Сумма по договору (amount) Column -->
 					<ng-container matColumnDef="amount">
-						<th mat-header-cell *matHeaderCellDef mat-sort-header> Сумма по договору </th>
-						<td mat-cell *matCellDef="let row"> {{row.amount | currency: ' '}} </td>
+						<th mat-header-cell *matHeaderCellDef mat-sort-header
+							style="display:flex;flex-direction:row;justify-content:flex-end;align-items:stretch;height:inherit;padding-left:5px;">
+							Сумма по договору
+						</th>
+						<td mat-cell *matCellDef="let row" style="text-align: right;"> {{row.amount | currency: ' '}} </td>
 					</ng-container>
 
 					<!-- Задолженности (arrears) Column -->
 					<ng-container matColumnDef="arrears">
-						<th mat-header-cell *matHeaderCellDef mat-sort-header> Задолженности </th>
-						<td mat-cell *matCellDef="let row"> {{row.arrears | currency: ' '}} </td>
+						<th mat-header-cell *matHeaderCellDef mat-sort-header
+							style="display:flex;flex-direction:row;justify-content:flex-end;align-items:stretch;height:inherit;padding-left:5px;">
+							Задолженности
+						</th>
+						<td mat-cell *matCellDef="let row" style="text-align: right;"> {{row.arrears | currency: ' '}} </td>
 					</ng-container>
 
 					<!-- Процент (percent) Column -->
 					<ng-container matColumnDef="percent">
 						<th mat-header-cell *matHeaderCellDef mat-sort-header> Процент </th>
-						<td mat-cell *matCellDef="let row"> {{row.percent}}% </td>
+						<td mat-cell *matCellDef="let row" style="text-align: right;"> {{row.percent}}% </td>
 					</ng-container>
 
 					<!-- Остаток (balance) Column -->
 					<ng-container matColumnDef="balance">
 						<th mat-header-cell *matHeaderCellDef mat-sort-header> Остаток </th>
-						<td mat-cell *matCellDef="let row"> {{row.balance | currency: ' '}} </td>
+						<td mat-cell *matCellDef="let row" style="text-align: right;"> {{row.balance | currency: ' '}} </td>
 					</ng-container>
 
 					<!-- Action Column -->

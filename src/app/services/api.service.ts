@@ -11,13 +11,14 @@ export class ApiService {
 
   postProduct(data : any) {
     // return this.http.post<any>("http://localhost:3000/productList/", data);
-    return this.http.post<any>("https://qqb-api.ruxshanateks.com/create.php", data);
+    return this.http.post<any>("http://code.tsue.uz/qqb-api2/create.php", data);
   }
   getProduct() {
     // return this.http.get<any>("http://localhost:3000/productList/");
     // let f: string[];
     // f = this.http.get<any>("https://qqb-api.ruxshanateks.com/read.php");
-    return this.http.get<any>("https://qqb-api.ruxshanateks.com/read.php");
+    // return this.http.get<any>("https://qqb-api.ruxshanateks.com/read.php");
+    return this.http.get<any>("http://code.tsue.uz/qqb-api2/read.php");
   }
   putProduct(data: any, id: number) {
     return this.http.put<any>("http://localhost:3000/productList/" + id, data);
