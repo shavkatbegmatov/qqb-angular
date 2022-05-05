@@ -62,11 +62,11 @@ export class PageSmartvisaComponent {
     })
   }
   getAllProducts() {
-    this.api.getProduct()
+    this.api.getSmartVisa()
     .subscribe({
       next: (res) => {
         console.table(res);
-        let k:string = res[0]["branch"];
+        let k:string = res[0]["status"];
         console.log(k);
         // res[0]["branch"] = allBranchs[0];
         // let res2 = res.map((el: any) =>{

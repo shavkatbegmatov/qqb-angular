@@ -1,6 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+
+import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ApiService } from '../services/api.service';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-page-settlement-sheet',
@@ -8,6 +15,13 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./page-settlement-sheet.component.scss']
 })
 export class PageSettlementSheetComponent {
+
+  displayedColumns: string[] = ['operandId', 'operandName', 'sum', 'createdDate'];
+  dataSource!: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -29,5 +43,75 @@ export class PageSettlementSheetComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private dialog : MatDialog, private api : ApiService) { }
+  
+
+  ngOnInit(): void {
+    this.getAllProducts();
+  }
+
+  openDialog() {
+    this.dialog.open(DialogComponent, {
+      width: '90%',
+      minWidth: '300px',
+      maxWidth: '500px',
+    }).afterClosed().subscribe(val => {
+      if(val === 'save') {
+        this.getAllProducts();
+      }
+    })
+  }
+  getAllProducts() {
+    this.api.getSettlementSheet()
+    .subscribe({
+      next: (res) => {
+        console.table(res);
+        let k:string = res[0]["status"];
+        console.log(k);
+        // res[0]["branch"] = allBranchs[0];
+        // let res2 = res.map((el: any) =>{
+        //   let k = el["branch"];
+        //   console.log(k);
+        //   return el["branch"] = allBranchs[k];
+        // });
+        this.dataSource = new MatTableDataSource(res);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      },
+      error: (err) => {
+        alert("Error while feching the Record!");
+      }
+    })
+  }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+  deleteProduct(id: number) {
+    this.api.deleteProduct(id)
+    .subscribe({
+      next: (res) => {
+        alert("Product deleted successfully");
+        this.getAllProducts();
+      },
+      error: () => {
+        alert("Error while deleting the product!");
+      }
+    })
+  }
+  editProduct(row: any) {
+    this.dialog.open(DialogComponent, {
+      width: '30%',
+      data: row
+    }).afterClosed().subscribe(val => {
+      if(val === 'update') {
+        this.getAllProducts();
+      }
+    })
+  }
+
 }

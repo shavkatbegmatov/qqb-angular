@@ -13,23 +13,30 @@ export class ApiService {
     // return this.http.post<any>("http://localhost:3000/productList/", data);
     return this.http.post<any>("http://code.tsue.uz/qqb-api2/create.php", data);
   }
-  getProduct() {
-    // return this.http.get<any>("http://localhost:3000/productList/");
-    // let f: string[];
-    // f = this.http.get<any>("https://qqb-api.ruxshanateks.com/read.php");
-    // return this.http.get<any>("https://qqb-api.ruxshanateks.com/read.php");
-    return this.http.get<any>("http://code.tsue.uz/qqb-api2/read.php");
+  
+  getLoan() {
+    return this.http.get<any>("http://code.tsue.uz/qqb-api2/read.php?data=loans");
   }
+  
+  getSmartVisa() {
+    return this.http.get<any>("http://code.tsue.uz/qqb-api2/read.php?data=smartvisa");
+  }
+
+  getSettlementSheet() {
+    return this.http.get<any>("http://code.tsue.uz/qqb-api2/read.php?data=settlement-sheet");
+  }
+  
   putProduct(data: any, id: number) {
     return this.http.put<any>("http://localhost:3000/productList/" + id, data);
   }
+
   deleteProduct(id: number) {
     return this.http.delete<any>("http://localhost:3000/productList/" + id);
   }
-
 
   getExchange() {
     // return this.http.get<any>("http://localhost:3000/productList/");
     return this.http.get<any>("https://nbu.uz/exchange-rates/json/");
   }
+
 }

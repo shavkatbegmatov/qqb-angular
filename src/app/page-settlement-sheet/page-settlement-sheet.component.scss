@@ -1,5 +1,35 @@
+.example-spacer {
+    flex: 1 1 auto;
+    font-size: 60px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+// td, th {
+//   width: 25%;
+// }
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+
+
+
 .grid-container {
-  margin: 20px;
+  margin: 0px;
+  // margin-top: 1px;
+  border-top: 3px solid yellow;
 }
 
 .dashboard-card {
@@ -20,11 +50,91 @@
   text-align: center;
 }
 
+
+.tab-overflow {
+  overflow-x: auto;
+  height: 100vh;
+  max-width: 100%;
+}
+
+.mytable th{
+  background-color: #3f51b5;
+  color: aliceblue;
+}
+
+.mytable td{
+  padding-left: 8px;
+}
+
+.mytable tr:nth-child(even) {
+  background-color: cornsilk;
+}
+
+.mat-cell, .mat-footer-cell {
+  font-size: 14px;
+}
+
+.mat-header-cell {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.table-actions {
+  min-width: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .grid-container {
   margin: 0px;
   // margin-top: 1px;
-  border-top: 3px solid rgba(54, 89, 219, .33);
+  border-top: 3px solid yellow;
 }
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+
 
 .card-container {
   display: flex;

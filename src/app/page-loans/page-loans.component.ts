@@ -139,7 +139,7 @@ export class PageLoansComponent {
     })
   }
   getAllProducts() {
-    this.api.getProduct()
+    this.api.getLoan()
     .subscribe({
       next: (res) => {
         let res_b = res.map((el: any) =>{

@@ -6,75 +6,73 @@
 				<span class="leaderboard__title--bottom">Персональный кабинет</span>
 			</h1>
 		</header>
-		<main class="leaderboard__profiles">
-			<div class="container">
-				<div style="margin-top: 10px;">
-					<mat-form-field appearance="standard">
-						<mat-label>Фильтр</mat-label>
-						<input matInput (keyup)="applyFilter($event)" placeholder="15" #input>
-					</mat-form-field>
+		<div class="container">
+			<div style="margin-top: 10px;">
+				<mat-form-field appearance="standard">
+					<mat-label>Фильтр</mat-label>
+					<input matInput (keyup)="applyFilter($event)" placeholder="15" #input>
+				</mat-form-field>
 
-					<div class="mat-elevation-z1 tab-overflow">
-						<table mat-table [dataSource]="dataSource" matSort class="mytable">
+				<div class="mat-elevation-z1 tab-overflow">
+					<table mat-table [dataSource]="dataSource" matSort class="mytable">
 
-							<!-- Валюта (Currency) Column -->
-							<ng-container matColumnDef="currency">
-								<th mat-header-cell *matHeaderCellDef mat-sort-header> Валюта </th>
-								<td mat-cell *matCellDef="let row"> {{row.currency}} </td>
-							</ng-container>
+						<!-- Валюта (currency) Column -->
+						<ng-container matColumnDef="currency">
+							<th mat-header-cell *matHeaderCellDef mat-sort-header> Валюта </th>
+							<td mat-cell *matCellDef="let row"> {{row.currency}} </td>
+						</ng-container>
 
-							<!-- Номер карты (cardNumber) Column -->
-							<ng-container matColumnDef="cardNumber">
-								<th mat-header-cell *matHeaderCellDef mat-sort-header> Номер карты </th>
-								<td mat-cell *matCellDef="let row"> {{row.cardNumber}} </td>
-							</ng-container>
+						<!-- Номер карты (cardNumber) Column -->
+						<ng-container matColumnDef="cardNumber">
+							<th mat-header-cell *matHeaderCellDef mat-sort-header> Номер карты </th>
+							<td mat-cell *matCellDef="let row"> {{row.cardNumber}} </td>
+						</ng-container>
 
-							<!-- Счет (cardAccount) Column -->
-							<ng-container matColumnDef="cardAccount">
-								<th mat-header-cell *matHeaderCellDef mat-sort-header> Счет </th>
-								<td mat-cell *matCellDef="let row"> {{row.cardAccount}} </td>
-							</ng-container>
+						<!-- Счет (cardAccount) Column -->
+						<ng-container matColumnDef="cardAccount">
+							<th mat-header-cell *matHeaderCellDef mat-sort-header> Счет </th>
+							<td mat-cell *matCellDef="let row"> {{row.cardAccount}} </td>
+						</ng-container>
 
-							<!-- Остаток (balance) Column -->
-							<ng-container matColumnDef="balance">
-								<th mat-header-cell *matHeaderCellDef mat-sort-header> Остаток </th>
-								<td mat-cell *matCellDef="let row"> {{row.balance}} </td>
-							</ng-container>
+						<!-- Остаток (balance) Column -->
+						<ng-container matColumnDef="balance">
+							<th mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition="before"> Остаток </th>
+							<td mat-cell *matCellDef="let row" align="right"> {{row.balance | currency: ' '}} </td>
+						</ng-container>
 
-							<!-- Состояния (status) Column -->
-							<ng-container matColumnDef="status">
-								<th mat-header-cell *matHeaderCellDef mat-sort-header> Состояния </th>
-								<td mat-cell *matCellDef="let row"> {{row.status}} </td>
-							</ng-container>
+						<!-- Состояния (status) Column -->
+						<ng-container matColumnDef="status">
+							<th mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition="before"> Состояния </th>
+							<td mat-cell *matCellDef="let row" align="right"> {{row.status}} </td>
+						</ng-container>
 
-							<!-- Action Column -->
-							<ng-container matColumnDef="action">
-								<th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-								<td mat-cell *matCellDef="let row" class="table-actions">
-									<button mat-icon-button (click)="editProduct(row)" color="primary">
-										<mat-icon>edit</mat-icon>
-									</button>
-									<button mat-icon-button (click)="deleteProduct(row.id)" color="warn">
-										<mat-icon>delete</mat-icon>
-									</button>
-								</td>
-							</ng-container>
+						<!-- Action Column -->
+						<ng-container matColumnDef="action">
+							<th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+							<td mat-cell *matCellDef="let row" class="table-actions">
+								<button mat-icon-button (click)="editProduct(row)" color="primary">
+									<mat-icon>edit</mat-icon>
+								</button>
+								<button mat-icon-button (click)="deleteProduct(row.id)" color="warn">
+									<mat-icon>delete</mat-icon>
+								</button>
+							</td>
+						</ng-container>
 
-							<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-							<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+						<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+						<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-							<!-- Row shown when there is no matching data. -->
-							<tr class="mat-row" *matNoDataRow>
-								<td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-							</tr>
-						</table>
+						<!-- Row shown when there is no matching data. -->
+						<tr class="mat-row" *matNoDataRow>
+							<td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+						</tr>
+					</table>
 
-						<mat-paginator [pageSizeOptions]="[25, 50, 75, 100]" aria-label="Select page of users">
-						</mat-paginator>
-					</div>
+					<mat-paginator [pageSizeOptions]="[25, 50, 75, 100]" aria-label="Select page of users">
+					</mat-paginator>
 				</div>
 			</div>
-		</main>
+		</div>
 	</article>
 	<h1 class="mat-h1">5465654</h1>
 </div>

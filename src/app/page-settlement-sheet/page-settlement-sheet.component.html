@@ -6,9 +6,67 @@
 				<span class="leaderboard__title--bottom">Персональный кабинет</span>
 			</h1>
 		</header>
-		<main class="leaderboard__profiles">
+		<div class="container">
+			<div style="margin-top: 10px;">
+				<mat-form-field appearance="standard">
+					<mat-label>Фильтр</mat-label>
+					<input matInput (keyup)="applyFilter($event)" placeholder="15" #input>
+				</mat-form-field>
 
-		</main>
+				<div class="mat-elevation-z1 tab-overflow">
+					<table mat-table [dataSource]="dataSource" matSort class="mytable">
+
+						<!-- Ид операнда (operandId) Column -->
+						<ng-container matColumnDef="operandId">
+							<th mat-header-cell *matHeaderCellDef mat-sort-header> Ид операнда </th>
+							<td mat-cell *matCellDef="let row"> {{row.operandId}} </td>
+						</ng-container>
+
+						<!-- Наименование операнда (operandName) Column -->
+						<ng-container matColumnDef="operandName">
+							<th mat-header-cell *matHeaderCellDef mat-sort-header> Наименование операнда </th>
+							<td mat-cell *matCellDef="let row"> {{row.operandName}} </td>
+						</ng-container>
+
+						<!-- Сумма (sum) Column -->
+						<ng-container matColumnDef="sum">
+							<th mat-header-cell *matHeaderCellDef mat-sort-header> Сумма </th>
+							<td mat-cell *matCellDef="let row"> {{row.sum | currency: ' '}} </td>
+						</ng-container>
+
+						<!-- Когда создал (createdDate) Column -->
+						<ng-container matColumnDef="createdDate">
+							<th mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition="before"> Когда создал </th>
+							<td mat-cell *matCellDef="let row" align="right"> {{row.createdDate | date:"MM/dd/yyyy"}} </td>
+						</ng-container>
+
+						<!-- Action Column -->
+						<ng-container matColumnDef="action">
+							<th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+							<td mat-cell *matCellDef="let row" class="table-actions">
+								<button mat-icon-button (click)="editProduct(row)" color="primary">
+									<mat-icon>edit</mat-icon>
+								</button>
+								<button mat-icon-button (click)="deleteProduct(row.id)" color="warn">
+									<mat-icon>delete</mat-icon>
+								</button>
+							</td>
+						</ng-container>
+
+						<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+						<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+						<!-- Row shown when there is no matching data. -->
+						<tr class="mat-row" *matNoDataRow>
+							<td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+						</tr>
+					</table>
+
+					<mat-paginator [pageSizeOptions]="[25, 50, 75, 100]" aria-label="Select page of users">
+					</mat-paginator>
+				</div>
+			</div>
+		</div>
 	</article>
-	<h1 class="mat-h1"></h1>
+	<h1 class="mat-h1">5465654</h1>
 </div>
